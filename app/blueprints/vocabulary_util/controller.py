@@ -1,6 +1,7 @@
 from app.blueprints.vocabulary_util.database_handler.db import SessionLocal
 from app.blueprints.vocabulary_util.database_handler.db_handler import VocabularyDatabaseHandler
 import collections
+import json
 
 
 class VocabularyController():
@@ -33,7 +34,7 @@ class VocabularyController():
         offset, limit = self.__paginator(page)
         letters = collections.Counter(filter_string)
         words = self.__db_handler.get_filtered_words(letters, offset, limit)
-        return {"http_code": 200, "description": words}
+        return {"http_code": 200, "description": json.dumps(words)}
 
     def __paginator(self, page):
         limit = page * 10

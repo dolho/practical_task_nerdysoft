@@ -55,7 +55,7 @@ class VocabularyDatabaseHandler():
         all_found_words = query.offset(offset).limit(limit).all()
         result = []
         for i in all_found_words:
-            result.append(str(i) + " ")
+            result.append(str(i))
         return result
 
     def __filter_by_count_of_character_amount(self, query, letter, quantity_of_letter):
