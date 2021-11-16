@@ -5,10 +5,12 @@
 - Flask
 - Swagger 
 - SQLAlchemy
-- PostgreSQL. 
+- PostgreSQL
+
 Помимо этого, из стандартной библиотеки были использованы модули
  - json 
  - collections.Counter
+ 
  Приложение было запущено на облачной платформе Heroku и 
 доступно по адрессу https://still-cove-38481.herokuapp.com/apidocs/
 (может долго загружаться при первом подключении)
