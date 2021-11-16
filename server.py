@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, redirect
 from flasgger import Swagger
 from app.blueprints.vocabulary_util.vocabulary_util import blueprint_vocabulary
 import os
@@ -11,13 +11,10 @@ app.register_blueprint(blueprint_vocabulary)
 swagger = Swagger(app)
 
 
-def create_app():
-    app = Flask(__name__)
-    # app.register_blueprint(blueprint_user)
-    # app.register_blueprint(blueprint_converter)
-    app.register_blueprint(blueprint_vocabulary)
-    swagger = Swagger(app)
-    return app
+
+@app.route("/")
+def index():
+    return redirect("/apidocs")
 
 @app.cli.command()
 def setup():

@@ -43,7 +43,7 @@ def add_word():
 @blueprint_vocabulary.route('/words', methods=['POST'])
 def add_words():
     """
-    Adds all given words to the dictionary. If the word is already in dictionary, it ignores it.
+    Adds all given words to the dictionary. If the word is already in the dictionary, it ignores it.
         ---
         tags:
           - Words
@@ -71,7 +71,7 @@ def add_words():
             examples:
                'True'
           400:
-            description: Given email or password is incorrect
+            description: Incorrect JSON file
         """
     words = []
     try:
@@ -118,7 +118,7 @@ def replace_words():
 @blueprint_vocabulary.route('/word/count', methods=['GET'])
 def get_words_count():
     """
-    Get's word count
+    Gets word count
         ---
         tags:
           - Word
@@ -149,7 +149,7 @@ def get_words_count():
 @blueprint_vocabulary.route('/words', methods=['GET'])
 def get_words():
     """
-    Gets words which have exactly or more given letters
+    Gets words which have exactly or more given letters; 10 words per page
         ---
         tags:
           - Words
